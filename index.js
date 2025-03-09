@@ -9,7 +9,7 @@ const GITHUB_USERNAME = "JarvisStark24";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_API_URL = "https://api.github.com";
 
-// Fetch general GitHub profile data
+// Fetching general GitHub profile data
 app.get("/github", async (req, res) => {
   try {
     const { data } = await axios.get(`${GITHUB_API_URL}/users/${GITHUB_USERNAME}`, {
@@ -27,7 +27,7 @@ app.get("/github", async (req, res) => {
   }
 });
 
-// Fetch specific repository data
+// Fetching specific repository data
 app.get("/github/:repo", async (req, res) => {
   try {
     const { repo } = req.params;
